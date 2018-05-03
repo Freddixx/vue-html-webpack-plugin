@@ -33,7 +33,8 @@ class HtmlWebpackPlugin {
       chunksSortMode: 'auto',
       meta: {},
       title: 'Webpack App',
-      xhtml: false
+      xhtml: false,
+      vue: false
     }, options);
   }
 
@@ -509,6 +510,14 @@ class HtmlWebpackPlugin {
    * Injects the assets into the given html string
    */
   generateHtmlTags (assets) {
+    //Add entry point for Vue.js
+    const vueApp = assets.js.map(() => ({
+        tagName: 'div',
+        closeTag: true,
+        attributes: {
+          id: 'app'
+        }
+    }));    
     // Turn script files into script tags
     const scripts = assets.js.map(scriptPath => ({
       tagName: 'script',
@@ -533,6 +542,11 @@ class HtmlWebpackPlugin {
     // Injection targets
     let head = this.getMetaTags();
     let body = [];
+    
+    //Add div with id='app' for Vue.js entry point
+    if (this.options.vue) {
+      body = body.concat(vueApp);
+    };
 
     // If there is a favicon present, add it to the head
     if (assets.favicon) {
