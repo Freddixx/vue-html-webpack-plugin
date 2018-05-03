@@ -2,16 +2,16 @@ This is a [webpack](http://webpack.js.org/) plugin powered by [HTML Webpack Plug
 
 **install**
 ```bash
-  npm i --save-dev brokolosov/html-webpack-plugin
+  npm i --save-dev vue-html-webpack-plugin
 ```
 
 **webpack.config.js**
 ```js
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('vue-html-webpack-plugin')
 
 module.exports = {
   plugins: [
-    new HtmlWebpackPlugin({
+    new VueHtmlWebpackPlugin({
       vue: true
     })
   ]
