@@ -1,5 +1,10 @@
 This is a [webpack](http://webpack.js.org/) plugin powered by [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin), and add just one boolean param to the options.
 
+**install**
+```bash
+  npm i --save-dev brokolosov/html-webpack-plugin
+```
+
 **webpack.config.js**
 ```js
 const HtmlWebpackPlugin = require('html-webpack-plugin')
