@@ -7,7 +7,7 @@ This is a [webpack](http://webpack.js.org/) plugin powered by [HTML Webpack Plug
 
 **webpack.config.js**
 ```js
-const HtmlWebpackPlugin = require('vue-html-webpack-plugin')
+const VueHtmlWebpackPlugin = require('vue-html-webpack-plugin')
 
 module.exports = {
   plugins: [
